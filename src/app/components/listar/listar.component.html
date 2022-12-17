@@ -1,0 +1,18 @@
+<table border=1>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>IMG</th>
+      <th>Titulo</th>
+      <th>Descricao</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let noticia of getNoticias">
+      <td>{{noticia.id}}</td>
+      <td><img src="{{noticia.img}}" alt="{{noticia.titulo}}" style="height:100px; width: 130px;"></td>
+      <td>{{noticia.titulo}}</td>
+      <td>{{noticia.descricao}}</td>
+    </tr>
+  </tbody>
+</table>
