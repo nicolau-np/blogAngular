@@ -15,11 +15,11 @@
       <td>{{noticia.titulo}}</td>
       <td>{{noticia.descricao}}</td>
       <td>
-        <a href="show/{{noticia.id}}">Visualizar</a>
+        <a href="show/{{noticia.id}}">Vi sualizar</a>
       &nbsp;
       <a href="edit/{{noticia.id}}">Editar</a>
       &nbsp;
-      <a href="delete/{{noticia.id}}">Eliminar</a>
+      <a (click)="removeNoticia(noticia)">Eliminar</a>
       </td>
     </tr>
   </tbody>

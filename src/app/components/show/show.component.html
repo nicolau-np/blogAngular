@@ -1,7 +1,11 @@
 <div *ngIf="getNoticia" class="card">
   <div class="card-body">
-    <div class="img">
-      <img src="{{getNoticia}}" style="height: 200px; width:300px;" alt=""/>
-    </div>
+    <h2 class="card-title">{{getNoticia.titulo}}</h2>
+
+    <img src="{{getNoticia.img}}" style="height: 200px; width:300px;" alt="" />
+    <p>
+      {{getNoticia.descricao}}
+    </p>
+
   </div>
 </div>

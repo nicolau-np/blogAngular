@@ -20,4 +20,11 @@ constructor(private noticiaService: NoticiaService){ }
     })
   }
 
+  removeNoticia(noticia: Noticia){
+    this.getNoticias = this.getNoticias.filter((a)=> noticia.id!= a.id);
+    this.noticiaService.delete(Number(noticia.id)).subscribe((response:any)=>{
+      console.log(response);
+    })
+  }
+
 }

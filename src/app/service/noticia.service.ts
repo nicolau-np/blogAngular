@@ -27,6 +27,6 @@ export class NoticiaService {
   }
 
   delete(id: number) {
-    return this.httpClient.delete(API_PATH + "noticias/" + id).toPromise()
+    return this.httpClient.delete(API_PATH + "noticias/" + id)
   }
 }
