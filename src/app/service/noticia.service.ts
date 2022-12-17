@@ -15,15 +15,15 @@ export class NoticiaService {
   }
 
   show(id: number) {
-    return this.httpClient.get<Noticia>(API_PATH + "noticias/" + id).toPromise()
+    return this.httpClient.get<Noticia>(API_PATH + "noticias/" + id)
   }
 
   store(noticia: Noticia) {
-    return this.httpClient.post<Noticia>(API_PATH + "noticias", noticia).toPromise()
+    return this.httpClient.post<Noticia>(API_PATH + "noticias", noticia)
   }
 
   update(noticia: Noticia) {
-    return this.httpClient.put<Noticia>(API_PATH + "noticias/" + noticia.id + "", noticia).toPromise()
+    return this.httpClient.put<Noticia>(API_PATH + "noticias/" + noticia.id + "", noticia)
   }
 
   delete(id: number) {
