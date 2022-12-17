@@ -5,6 +5,7 @@
       <th>IMG</th>
       <th>Titulo</th>
       <th>Descricao</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -13,6 +14,11 @@
       <td><img src="{{noticia.img}}" alt="{{noticia.titulo}}" style="height:100px; width: 130px;"></td>
       <td>{{noticia.titulo}}</td>
       <td>{{noticia.descricao}}</td>
+      <td>
+        <a href="show/{{noticia.id}}">Editar</a>
+      &nbsp;
+      <a href="delete/{{noticia.id}}">Eliminar</a>
+      </td>
     </tr>
   </tbody>
 </table>
