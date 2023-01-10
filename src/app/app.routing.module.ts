@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'listar', component: ListarComponent },
   { path: 'novo', component: CreateComponent },
-  {path: 'show/:id', component: ShowComponent},
+  { path: 'show/:id', component: ShowComponent},
 ]
 @NgModule({
   declarations: [],
