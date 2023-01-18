@@ -16,26 +16,33 @@ export class EditComponent implements OnInit{
   constructor(private route:ActivatedRoute, private noticiaService: NoticiaService){}
 
   ngOnInit(){
-    this.id = this.route.snapshot.paramMap.get('id');
+    this.id = this.route.snapshot.paramMap.get('id')
     this.getNoticiaId()
 
     this.reactiveForm = new FormGroup({
+      id: new FormControl(null),
       titulo: new FormControl(null, Validators.required),
       descricao:  new FormControl(null, Validators.required),
       img:  new FormControl(null, Validators.required),
-  })
-
-  console.log(this.data.titulo)
+    })
 
   }
 
   onSubmit(){
-
+    this.updateNoticia()
   }
 
   getNoticiaId() {
     this.noticiaService.show(this.id).subscribe((response: any) => {
-        this.data = response.data
-    });
+      this.reactiveForm.setValue(response.data)
+    })
   }
+
+  updateNoticia(){
+    this.noticiaService.update(this.reactiveForm.value).subscribe((response:any)=>{
+      console.log(response)
+    })
+  }
+
+
 }

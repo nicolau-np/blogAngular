@@ -16,6 +16,7 @@ constructor(private noticiaService: NoticiaService) {
 
 ngOnInit(){
   this.reactiveForm = new FormGroup({
+      id: new FormControl(null),
       titulo: new FormControl(null, Validators.required),
       descricao:  new FormControl(null, Validators.required),
       img:  new FormControl(null, Validators.required),
