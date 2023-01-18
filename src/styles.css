@@ -13,3 +13,10 @@ input.ng-invalid.ng-touched{
 textarea.ng-invalid.ng-touched{
   border: 1px red solid;
 }
+.login-link{
+  color: #fff;
+}
+.login-link:hover{
+  color: #fff;
+}
+
