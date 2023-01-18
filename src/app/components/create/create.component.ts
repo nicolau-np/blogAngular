@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Noticia } from 'src/app/Models/Noticia';
 import { NoticiaService } from 'src/app/service/noticia.service';
 
 @Component({
@@ -24,21 +23,14 @@ ngOnInit(){
 }
 
 onSubmit(){
-
+  this.storeNoticia()
 }
 
 storeNoticia() {
-  const noticia: Noticia = {
-    titulo: this.reactiveForm.value.titulo,
-    descricao: this.reactiveForm.value.descricao,
-    img: this.reactiveForm.value.img
-  }
-
-  this.noticiaService.store(noticia).subscribe(
+  this.noticiaService.store(this.reactiveForm.value).subscribe(
     response => {
       console.log(response)
     })
-
 }
 
 }

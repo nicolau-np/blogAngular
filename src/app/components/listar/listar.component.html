@@ -15,7 +15,7 @@
     <tr *ngFor="let noticia of getNoticias">
       <td>{{noticia.id}}</td>
       <td><img src="{{noticia.img}}" alt="{{noticia.titulo}}" style="height:100px; width: 130px;"></td>
-      <td>{{noticia.titulo}}</td>
+      <td><b>{{noticia.titulo}}</b></td>
       <td>{{noticia.descricao}}</td>
       <td>
         <a href="show/{{noticia.id}}" class="btn btn-primary btn-xs"><i class="fa fa-eye"></i> Visualizar</a>
