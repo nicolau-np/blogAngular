@@ -10,6 +10,8 @@ export class UserdetailComponent implements OnInit{
 
 constructor(private http:HttpClient){}
 
+user:any
+
   ngOnInit(){
     const user:any = localStorage.getItem('user')
     const userobj = JSON.parse(user)
@@ -22,6 +24,7 @@ constructor(private http:HttpClient){}
 
     this.http.get('http://127.0.0.1:8000/api/user', {headers: headers}).subscribe((response:any)=>{
       console.log(response)
+      this.user = response
     })
 
   }
