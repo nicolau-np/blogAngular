@@ -1,4 +1,4 @@
-<table border=1>
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th>ID</th>
@@ -15,11 +15,11 @@
       <td>{{noticia.titulo}}</td>
       <td>{{noticia.descricao}}</td>
       <td>
-        <a href="show/{{noticia.id}}">Visualizar</a>
+        <a href="show/{{noticia.id}}" class="btn btn-primary btn-xs"><i class="fa fa-eye"></i> Visualizar</a>
       &nbsp;
-      <a href="edit/{{noticia.id}}">Editar</a>
+      <a href="edit/{{noticia.id}}" class="btn btn-success btn-xs"><i class="fa fa-edit"></i> Editar</a>
       &nbsp;
-      <a (click)="removeNoticia(noticia)">Eliminar</a>
+      <a (click)="removeNoticia(noticia)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Eliminar</a>
       </td>
     </tr>
   </tbody>
