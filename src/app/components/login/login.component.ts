@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit{
     this.noticiaService.login(this.reactiveForm.value).subscribe(
     (response:any) => {
       console.log(response.data)
+      localStorage.setItem('user', JSON.stringify(response))
     })
   }
 
