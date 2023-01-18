@@ -13,6 +13,7 @@ import { ListarComponent } from './components/listar/listar.component';
 import { CreateComponent } from './components/create/create.component';
 import { ShowComponent } from './components/show/show.component';
 import { EditComponent } from './components/edit/edit.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { EditComponent } from './components/edit/edit.component';
     ListarComponent,
     CreateComponent,
     ShowComponent,
-    EditComponent
+    EditComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
