@@ -12,6 +12,7 @@ import { NoticiaService } from './service/noticia.service';
 import { ListarComponent } from './components/listar/listar.component';
 import { CreateComponent } from './components/create/create.component';
 import { ShowComponent } from './components/show/show.component';
+import { EditComponent } from './components/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ShowComponent } from './components/show/show.component';
     HomeComponent,
     ListarComponent,
     CreateComponent,
-    ShowComponent
+    ShowComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

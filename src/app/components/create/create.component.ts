@@ -28,7 +28,7 @@ onSubmit(){
 
 storeNoticia() {
   this.noticiaService.store(this.reactiveForm.value).subscribe(
-    response => {
+    (response:any) => {
       console.log(response)
     })
 }

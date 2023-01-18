@@ -18,9 +18,9 @@
       <td><b>{{noticia.titulo}}</b></td>
       <td>{{noticia.descricao}}</td>
       <td>
-        <a href="show/{{noticia.id}}" class="btn btn-primary btn-xs"><i class="fa fa-eye"></i> Visualizar</a>
+        <a routerLink="/show/{{noticia.id}}" class="btn btn-primary btn-xs"><i class="fa fa-eye"></i> Visualizar</a>
       &nbsp;
-      <a href="edit/{{noticia.id}}" class="btn btn-success btn-xs"><i class="fa fa-edit"></i> Editar</a>
+      <a routerLink="/edit/{{noticia.id}}" class="btn btn-success btn-xs"><i class="fa fa-edit"></i> Editar</a>
       &nbsp;
       <a (click)="removeNoticia(noticia)" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Eliminar</a>
       </td>
