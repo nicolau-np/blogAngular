@@ -3,6 +3,13 @@
 
 .carousel-inner img
 {
-height: 18em;
-width: 100%;
+  height: 18em;
+  width: 100%;
+}
+
+input.ng-invalid.ng-touched{
+  border: 1px red solid;
+}
+textarea.ng-invalid.ng-touched{
+  border: 1px red solid;
 }
