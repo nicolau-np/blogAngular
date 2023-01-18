@@ -10,7 +10,6 @@ import { NoticiaService } from 'src/app/service/noticia.service';
 })
 export class EditComponent implements OnInit{
   id:any
-  data: any
   reactiveForm!:FormGroup
 
   constructor(private route:ActivatedRoute, private noticiaService: NoticiaService){}
@@ -39,7 +38,7 @@ export class EditComponent implements OnInit{
   }
 
   updateNoticia(){
-    this.noticiaService.update(this.reactiveForm.value).subscribe((response:any)=>{
+    this.noticiaService.update(this.reactiveForm.value, this.id).subscribe((response:any)=>{
       console.log(response)
     })
   }
