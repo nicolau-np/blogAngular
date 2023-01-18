@@ -8,17 +8,21 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CreateComponent {
 
+registerForm!:FormGroup
+submitted= false
 
-  profileForm = this.fb.group({
-    titulo: ['', Validators.required],
-    descricao: ['', Validators.required],
-    img: ['', Validators.required],
-  });
+constructor(private formBuilder:FormBuilder){}
 
-constructor(private fb: FormBuilder) { }
+ngOnInit(){
+  this.registerForm = this.formBuilder.group({
+titulo: ['', Validators.required],
+descricao: ['', Validators.required],
+img: ['', Validators.required],
+  })
+}
 
-  submit(){
-    console.log(this.profileForm.value);
-  }
+onSubmit(){
+
+}
 
 }

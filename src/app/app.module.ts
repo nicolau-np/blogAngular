@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app.routing.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -25,7 +25,6 @@ import { ShowComponent } from './components/show/show.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule,
     ReactiveFormsModule,
   ],
   providers: [NoticiaService],
