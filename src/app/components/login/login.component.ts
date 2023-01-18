@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NoticiaService } from 'src/app/service/noticia.service';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/service/authentication.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit{
   reactiveForm!:FormGroup
 
-  constructor(private noticiaService: NoticiaService, private router:Router){}
+  constructor(private authenticationService: AuthenticationService, private router:Router){}
 
   ngOnInit(){
     this.reactiveForm = new FormGroup({
@@ -26,7 +27,7 @@ export class LoginComponent implements OnInit{
   }
 
   logar(){
-    this.noticiaService.login(this.reactiveForm.value).subscribe(
+    this.authenticationService.login(this.reactiveForm.value).subscribe(
     (response:any) => {
       console.log(response.data)
       localStorage.setItem('user', JSON.stringify(response))

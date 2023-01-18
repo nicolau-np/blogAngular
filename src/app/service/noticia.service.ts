@@ -28,8 +28,4 @@ export class NoticiaService {
   delete(id: number) {
     return this.httpClient.delete(API_PATH + "noticias/" + id)
   }
-
-  login(data:any){
-    return this.httpClient.post(API_PATH + "user/login", data)
-  }
 }
