@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NoticiaService } from 'src/app/service/noticia.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -10,7 +12,7 @@ import { NoticiaService } from 'src/app/service/noticia.service';
 export class LoginComponent implements OnInit{
   reactiveForm!:FormGroup
 
-  constructor(private noticiaService: NoticiaService){}
+  constructor(private noticiaService: NoticiaService, private router:Router){}
 
   ngOnInit(){
     this.reactiveForm = new FormGroup({
@@ -28,6 +30,7 @@ export class LoginComponent implements OnInit{
     (response:any) => {
       console.log(response.data)
       localStorage.setItem('user', JSON.stringify(response))
+      this.router.navigate(['/userdetail'])
     })
   }
 

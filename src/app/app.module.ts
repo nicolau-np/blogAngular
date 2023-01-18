@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 
 
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NoticiaService } from './service/noticia.service';
@@ -14,6 +15,7 @@ import { CreateComponent } from './components/create/create.component';
 import { ShowComponent } from './components/show/show.component';
 import { EditComponent } from './components/edit/edit.component';
 import { LoginComponent } from './components/login/login.component';
+import { UserdetailComponent } from "./components/userdetail/userdetail.component";
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { LoginComponent } from './components/login/login.component';
     ShowComponent,
     EditComponent,
     LoginComponent,
+    UserdetailComponent
   ],
   imports: [
     BrowserModule,
