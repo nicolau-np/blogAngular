@@ -8,7 +8,15 @@ import { NoticiaService } from 'src/app/service/noticia.service';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit{
-title = "Criando Form"
+
+errors = {
+  titulo: null,
+  descricao:null,
+  img: null
+}
+
+status = false
+
 reactiveForm!:FormGroup
 
 constructor(private controller: NoticiaService) {
@@ -30,8 +38,16 @@ onSubmit(){
 storeNoticia() {
   this.controller.store(this.reactiveForm.value, "noticias").subscribe(
     (response:any) => {
+      this.clearFields()
+      this.status = true
       console.log(response)
+    }, (er:any)=>{
+      this.errors = er.error.errors
     })
+}
+
+clearFields(){
+ this.reactiveForm.reset()
 }
 
 }

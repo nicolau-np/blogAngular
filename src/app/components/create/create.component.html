@@ -1,25 +1,30 @@
 <div class="container">
   <div class="row">
+    <div class="col-md-12" *ngIf="status">
+        <div class="alert alert-success">Feito com sucesso</div>
+    </div>
     <div class="col-md-12">
-      <p>Form Status: </p>
       <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
               <label for="">Titulo</label>
               <input type="text" formControlName="titulo" class="form-control" placeholder="Titulo" />
+              <span class="text-danger text-error" *ngIf="errors.titulo">{{errors.titulo}}</span>
             </div>
           </div>
           <div class="col-md-12">
             <div class="form-group">
               <label for="">Descrição</label>
               <textarea formControlName="descricao" class="form-control"  cols="30" rows="3" placeholder="Descrição"></textarea>
+              <span class="text-danger text-error" *ngIf="errors.descricao">{{errors.descricao}}</span>
             </div>
           </div>
           <div class="col-md-12">
             <div class="form-group">
               <label for="">Imagem</label>
               <input type="text" formControlName="img" class="form-control"  placeholder="Imagem" />
+              <span class="text-danger text-error" *ngIf="errors.img">{{errors.img}}</span>
             </div>
           </div>
           <div class="col-md-12">

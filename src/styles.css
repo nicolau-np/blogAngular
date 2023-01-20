@@ -19,4 +19,6 @@ textarea.ng-invalid.ng-touched{
 .login-link:hover{
   color: #fff;
 }
-
+.text-error{
+  font-size: 12px;
+}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NoticiaService } from 'src/app/service/noticia.service';
 
 @Component({
@@ -8,15 +9,17 @@ import { NoticiaService } from 'src/app/service/noticia.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit{
+
   errors = {
     name:null,
     email: null,
     password:null,
     password_confirmation:null
   }
+
   reactiveForm!: FormGroup
 
-  constructor(private controller: NoticiaService){}
+  constructor(private controller: NoticiaService, private router: Router){}
 
   ngOnInit(): void {
     this.reactiveForm = new FormGroup({
@@ -30,11 +33,16 @@ export class RegisterComponent implements OnInit{
 
   onSubmit(){
     this.controller.store(this.reactiveForm.value, "auth/register").subscribe((response:any)=>{
-      console.log(response)
-    }, (errors:any)=>{
-      console.log(errors.error.errors)
-      this.errors = errors.error.errors
+      this.clearFields()
+      this.router.navigate(['/login'])
+    }, (er:any)=>{
+      console.log(er.error.errors)
+      this.errors = er.error.errors
     })
   }
+
+  clearFields(){
+    this.reactiveForm.reset()
+   }
 
 }

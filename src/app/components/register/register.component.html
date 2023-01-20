@@ -8,28 +8,28 @@
             <div class="form-group">
               <label for="">Nome</label>
               <input type="text" formControlName="name" class="form-control" placeholder="Nome" />
-              <span class="text-danger" *ngIf="errors.name">{{errors.name}}</span>
+              <span class="text-danger text-error" *ngIf="errors.name">{{errors.name}}</span>
             </div>
           </div>
           <div class="col-md-12">
             <div class="form-group">
               <label for="">E-mail</label>
               <input type="text" formControlName="email" class="form-control" placeholder="E-mail" />
-              <span class="text-danger" *ngIf="errors.email">{{errors.email}}</span>
+              <span class="text-danger text-error" *ngIf="errors.email">{{errors.email}}</span>
             </div>
           </div>
           <div class="col-md-12">
             <div class="form-group">
               <label for="">Palavra-Passe</label>
-              <input type="text" formControlName="password" class="form-control"  placeholder="Palavra-Passe" />
-              <span class="text-danger" *ngIf="errors.password">{{errors.password}}</span>
+              <input type="password" formControlName="password" class="form-control"  placeholder="Palavra-Passe" />
+              <span class="text-danger text-error" *ngIf="errors.password">{{errors.password}}</span>
             </div>
           </div>
           <div class="col-md-12">
             <div class="form-group">
               <label for="">Confirmar Palavra-Passe</label>
-              <input type="text" formControlName="password_confirmation" class="form-control"  placeholder="Confirmar Palavra-Passe" />
-              <span class="text-danger" *ngIf="errors.password_confirmation">{{errors.password_confirmation}}</span>
+              <input type="password" formControlName="password_confirmation" class="form-control"  placeholder="Confirmar Palavra-Passe" />
+              <span class="text-danger text-error" *ngIf="errors.password_confirmation">{{errors.password_confirmation}}</span>
             </div>
           </div>
           <div class="col-md-12">
