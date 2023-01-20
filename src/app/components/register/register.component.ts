@@ -16,9 +16,10 @@ export class RegisterComponent implements OnInit{
   ngOnInit(): void {
     this.reactiveForm = new FormGroup({
       id: new FormControl(null),
-      nome: new FormControl(null, Validators.required),
+      name: new FormControl(null, Validators.required),
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, Validators.required),
+      password_confirmation: new FormControl(null, Validators.required)
     })
   }
 
