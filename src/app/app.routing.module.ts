@@ -8,16 +8,17 @@ import { LoginComponent } from "./components/login/login.component";
 import { RegisterComponent } from "./components/register/register.component";
 import { ShowComponent } from "./components/show/show.component";
 import { UserdetailComponent } from "./components/userdetail/userdetail.component";
+import { AuthGuard } from "./service/auth.guard"
 
 const routes: Routes = [
-  {path: 'login', component: LoginComponent},
   { path: '', component: HomeComponent },
-  { path: 'listar', component: ListarComponent },
-  { path: 'novo', component: CreateComponent },
+  { path: 'listar', component: ListarComponent, canActivate:[AuthGuard] },
+  { path: 'novo', component: CreateComponent, canActivate:[AuthGuard] },
   { path: 'show/:id', component: ShowComponent},
-  { path: 'edit/:id', component: EditComponent},
-  { path: 'userdetail', component: UserdetailComponent},
+  { path: 'edit/:id', component: EditComponent, canActivate:[AuthGuard]},
+  { path: 'userdetail', component: UserdetailComponent, canActivate:[AuthGuard]},
   { path: 'register', component: RegisterComponent},
+  {path: 'login', component: LoginComponent},
 ]
 @NgModule({
   declarations: [],

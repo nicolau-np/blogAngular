@@ -16,7 +16,7 @@ getNoticias: Noticia[] = []
 constructor(private controller: NoticiaService, private auth: AuthenticationService){ }
 
   ngOnInit() {
-    this.auth.status()
+    //this.auth.status()
    this.controller.index("noticias").subscribe(
     (response:any)=>{
       this.getNoticias=response.data
