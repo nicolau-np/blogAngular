@@ -9,16 +9,19 @@ import { AuthenticationService } from 'src/app/service/authentication.service';
 })
 export class UserdetailComponent implements OnInit{
 
-constructor(private authenticationService: AuthenticationService){}
+constructor(private auth: AuthenticationService){}
 
 user:any
 
   ngOnInit(){
+    this.auth.status().subscribe((response:any)=>{
+      //console.log(response)
+    })
 
-    this.authenticationService.user().subscribe((response:any)=>{
-      console.log(response)
+    this.auth.user().subscribe((response:any)=>{
       this.user = response
     })
+
   }
 
   logout(){

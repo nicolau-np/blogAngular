@@ -16,10 +16,14 @@ import { ShowComponent } from './components/show/show.component';
 import { EditComponent } from './components/edit/edit.component';
 import { LoginComponent } from './components/login/login.component';
 import { UserdetailComponent } from "./components/userdetail/userdetail.component";
+import { MenuComponent } from './components/menu/menu.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    MenuComponent,
+    FooterComponent,
     HomeComponent,
     ListarComponent,
     CreateComponent,
