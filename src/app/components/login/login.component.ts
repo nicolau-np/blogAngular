@@ -11,6 +11,13 @@ import { AuthenticationService } from 'src/app/service/authentication.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
+  errors = {
+    email:null,
+    password: null
+  }
+
+  status = false
+
   reactiveForm!:FormGroup
 
   constructor(private authenticationService: AuthenticationService, private router:Router){}
@@ -32,6 +39,14 @@ export class LoginComponent implements OnInit{
       console.log(response.data)
       localStorage.setItem('user', JSON.stringify(response))
       this.router.navigate(['/userdetail'])
+    }, (er:any)=>{
+      if(er.error.errors){
+        //console.log('tem valor erros')
+        this.errors = er.error.errors
+      }else{
+        this.status = true
+        //console.log('nao tem valor erros')
+      }
     })
   }
 
