@@ -18,6 +18,8 @@ import { LoginComponent } from './components/login/login.component';
 import { UserdetailComponent } from "./components/userdetail/userdetail.component";
 import { MenuComponent } from './components/menu/menu.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { RegisterComponent } from './components/register/register.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { FooterComponent } from './components/footer/footer.component';
     ShowComponent,
     EditComponent,
     LoginComponent,
-    UserdetailComponent
+    UserdetailComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

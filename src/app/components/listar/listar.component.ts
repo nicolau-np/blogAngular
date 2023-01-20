@@ -11,10 +11,10 @@ export class ListarComponent implements OnInit{
 
 getNoticias: Noticia[] = []
 
-constructor(private noticiaService: NoticiaService){ }
+constructor(private controller: NoticiaService){ }
 
   ngOnInit() {
-   this.noticiaService.index().subscribe(
+   this.controller.index("noticias").subscribe(
     (response:any)=>{
       this.getNoticias=response.data
     })
@@ -22,7 +22,7 @@ constructor(private noticiaService: NoticiaService){ }
 
   removeNoticia(noticia: Noticia){
     this.getNoticias = this.getNoticias.filter((a)=> noticia.id!= a.id);
-    this.noticiaService.delete(Number(noticia.id)).subscribe((response:any)=>{
+    this.controller.delete(Number(noticia.id), "noticias/").subscribe((response:any)=>{
       console.log(response);
     })
   }

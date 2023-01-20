@@ -11,7 +11,7 @@ import { NoticiaService } from 'src/app/service/noticia.service';
 })
 export class ShowComponent implements OnInit {
   getNoticia?: Noticia;
-  constructor(private noticiaService: NoticiaService, private route: ActivatedRoute) { }
+  constructor(private controller: NoticiaService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.getNoticiaId();
@@ -19,7 +19,7 @@ export class ShowComponent implements OnInit {
 
   getNoticiaId() {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.noticiaService.show(id).subscribe((response: any) => {
+    this.controller.show(id, "noticias/").subscribe((response: any) => {
       this.getNoticia = response.data
     });
   }

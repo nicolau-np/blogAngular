@@ -9,23 +9,23 @@ export class NoticiaService {
 
   constructor(private httpClient: HttpClient) { }
 
-  index() {
-    return this.httpClient.get(API_PATH + "noticias")
+  index(route:string) {
+    return this.httpClient.get(API_PATH + route)
   }
 
-  show(id: number) {
-    return this.httpClient.get(API_PATH + "noticias/" + id)
+  show(id: number, route:string) {
+    return this.httpClient.get(API_PATH + route + id)
   }
 
-  store(data:any) {
-    return this.httpClient.post(API_PATH + "noticias", data)
+  store(data:any, route:string) {
+    return this.httpClient.post(API_PATH + route, data)
   }
 
-  update(data:any, id:number) {
-    return this.httpClient.put(API_PATH + "noticias/" + id + "", data)
+  update(data:any, id:number, route:string) {
+    return this.httpClient.put(API_PATH + route + id + "", data)
   }
 
-  delete(id: number) {
-    return this.httpClient.delete(API_PATH + "noticias/" + id)
+  delete(id: number, route:string) {
+    return this.httpClient.delete(API_PATH + route + id)
   }
 }

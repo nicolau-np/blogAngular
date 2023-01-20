@@ -12,7 +12,7 @@ export class EditComponent implements OnInit{
   id:any
   reactiveForm!:FormGroup
 
-  constructor(private route:ActivatedRoute, private noticiaService: NoticiaService){}
+  constructor(private route:ActivatedRoute, private controller: NoticiaService){}
 
   ngOnInit(){
     this.id = this.route.snapshot.paramMap.get('id')
@@ -32,13 +32,13 @@ export class EditComponent implements OnInit{
   }
 
   getNoticiaId() {
-    this.noticiaService.show(this.id).subscribe((response: any) => {
+    this.controller.show(this.id, "noticias/").subscribe((response: any) => {
       this.reactiveForm.setValue(response.data)
     })
   }
 
   updateNoticia(){
-    this.noticiaService.update(this.reactiveForm.value, this.id).subscribe((response:any)=>{
+    this.controller.update(this.reactiveForm.value, this.id, "noticias/").subscribe((response:any)=>{
       console.log(response)
     })
   }

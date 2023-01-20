@@ -11,7 +11,7 @@ export class CreateComponent implements OnInit{
 title = "Criando Form"
 reactiveForm!:FormGroup
 
-constructor(private noticiaService: NoticiaService) {
+constructor(private controller: NoticiaService) {
 }
 
 ngOnInit(){
@@ -28,7 +28,7 @@ onSubmit(){
 }
 
 storeNoticia() {
-  this.noticiaService.store(this.reactiveForm.value).subscribe(
+  this.controller.store(this.reactiveForm.value, "noticias").subscribe(
     (response:any) => {
       console.log(response)
     })
