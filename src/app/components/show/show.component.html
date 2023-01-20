@@ -1,11 +1,22 @@
-<div *ngIf="getNoticia" class="card">
-  <div class="card-body">
-    <h2 class="card-title">{{getNoticia.titulo}}</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" *ngIf="status">
+      <div class="alert alert-danger">Noticia nao encontrada</div>
+    </div>
+    <div class="col-md-12">
+      <div *ngIf="getNoticia" class="card">
+        <div class="card-body">
+          <h2 class="card-title">{{getNoticia.titulo}}</h2>
 
-    <img src="{{getNoticia.img}}" style="height: 200px; width:300px;" alt="" />
-    <p>
-      {{getNoticia.descricao}}
-    </p>
+          <img src="{{getNoticia.img}}" style="height: 200px; width:300px;" alt="" />
+          <p>
+            {{getNoticia.descricao}}
+          </p>
 
+        </div>
+    </div>
+    </div>
   </div>
 </div>
+
+

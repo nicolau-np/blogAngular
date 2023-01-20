@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/service/authentication.service';
 import { NoticiaService } from 'src/app/service/noticia.service';
 
@@ -10,10 +10,11 @@ import { NoticiaService } from 'src/app/service/noticia.service';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit{
+  status = false
   id:any
   reactiveForm!:FormGroup
 
-  constructor(private route:ActivatedRoute, private controller: NoticiaService, private auth: AuthenticationService){}
+  constructor(private route:ActivatedRoute, private router: Router, private controller: NoticiaService, private auth: AuthenticationService){}
 
   ngOnInit(){
     this.auth.status()
@@ -36,12 +37,15 @@ export class EditComponent implements OnInit{
   getNoticiaId() {
     this.controller.show(this.id, "noticias/").subscribe((response: any) => {
       this.reactiveForm.setValue(response.data)
+    }, (er:any)=>{
+      this.status = true
     })
   }
 
   updateNoticia(){
     this.controller.update(this.reactiveForm.value, this.id, "noticias/").subscribe((response:any)=>{
       console.log(response)
+      this.router.navigate(['/listar'])
     })
   }
 

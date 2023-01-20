@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row">
+    <div class="col-md-12" *ngIf="status">
+      <div class="alert alert-danger">Noticia nao encontrada</div>
+    </div>
     <div class="col-md-12">
-      <p>Form Status: </p>
       <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
         <div class="row">
           <div class="col-md-12">
