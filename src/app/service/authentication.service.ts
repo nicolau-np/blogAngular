@@ -63,7 +63,7 @@ export class AuthenticationService {
       Authorization: 'Bearer '+token,
     })
 
-    return this.httpClient.post(API_PATH + 'auth/logout', {allDevice: false}, {headers: headers})
+    return this.httpClient.post(API_PATH + 'auth/logout', {allDevice: true}, {headers: headers})
   }
 
 }

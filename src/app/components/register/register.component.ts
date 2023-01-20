@@ -8,7 +8,12 @@ import { NoticiaService } from 'src/app/service/noticia.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit{
-
+  errors = {
+    name:null,
+    email: null,
+    password:null,
+    password_confirmation:null
+  }
   reactiveForm!: FormGroup
 
   constructor(private controller: NoticiaService){}
@@ -26,6 +31,9 @@ export class RegisterComponent implements OnInit{
   onSubmit(){
     this.controller.store(this.reactiveForm.value, "auth/register").subscribe((response:any)=>{
       console.log(response)
+    }, (errors:any)=>{
+      console.log(errors.error.errors)
+      this.errors = errors.error.errors
     })
   }
 
