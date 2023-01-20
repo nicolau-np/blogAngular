@@ -24,7 +24,7 @@ export class MenuComponent implements OnInit{
       localStorage.removeItem('user')
       this.auth.toggleLogin(false)
       this.router.navigate(['/'])
-      console.log(response)
+      //console.log(response)
     })
   }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { AuthenticationService } from 'src/app/service/authentication.service';
 import { NoticiaService } from 'src/app/service/noticia.service';
 
 @Component({
@@ -12,9 +13,10 @@ export class EditComponent implements OnInit{
   id:any
   reactiveForm!:FormGroup
 
-  constructor(private route:ActivatedRoute, private controller: NoticiaService){}
+  constructor(private route:ActivatedRoute, private controller: NoticiaService, private auth: AuthenticationService){}
 
   ngOnInit(){
+    this.auth.status()
     this.id = this.route.snapshot.paramMap.get('id')
     this.getNoticiaId()
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Noticia } from 'src/app/Models/Noticia';
+import { AuthenticationService } from 'src/app/service/authentication.service';
 import { NoticiaService } from 'src/app/service/noticia.service';
 
 @Component({
@@ -11,9 +12,11 @@ export class ListarComponent implements OnInit{
 
 getNoticias: Noticia[] = []
 
-constructor(private controller: NoticiaService){ }
+
+constructor(private controller: NoticiaService, private auth: AuthenticationService){ }
 
   ngOnInit() {
+    this.auth.status()
    this.controller.index("noticias").subscribe(
     (response:any)=>{
       this.getNoticias=response.data

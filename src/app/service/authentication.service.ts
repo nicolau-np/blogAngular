@@ -23,7 +23,14 @@ export class AuthenticationService {
       console.log('usuario nao esta logado!')
     }else{
       this.isLoggedIn.next(true)
-      console.log('usuario logado!')
+      this.user().subscribe((response:any)=>{
+        console.log('usuario logado!')
+        this.isLoggedIn.next(true)
+      }, error=>{
+        console.log('usuario nao esta logado!')
+        this.isLoggedIn.next(false)
+      })
+
     }
 
   return this.isLoggedIn.asObservable();
@@ -56,7 +63,7 @@ export class AuthenticationService {
       Authorization: 'Bearer '+token,
     })
 
-    return this.httpClient.post(API_PATH + 'auth/logout', {allDevice: true}, {headers: headers})
+    return this.httpClient.post(API_PATH + 'auth/logout', {allDevice: false}, {headers: headers})
   }
 
 }
